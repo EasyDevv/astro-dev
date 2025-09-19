@@ -1,0 +1,42 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import { BASE_URL } from "../constants.ts";
+// Trigger rebuild for base path fix
+---
+
+<BaseLayout title="Landing Page">
+	<div class="max-w-4xl mx-auto">
+		<header class="text-center mb-12">
+			<h1 class="text-5xl font-bold text-gray-800 mb-4">Welcome</h1>
+			<p class="text-xl text-gray-600">A simple landing page made with Astro</p>
+		</header>
+
+		<main>
+			<section class="bg-white rounded-lg shadow-lg p-8 mb-8">
+				<h2 class="text-3xl font-semibold text-gray-800 mb-6">About Our Service</h2>
+				<p class="text-gray-600 mb-6 leading-relaxed">
+					This is a simple landing page built with Astro and Tailwind CSS.
+					We provide fast performance and modern design.
+				</p>
+				<div class="grid md:grid-cols-3 gap-6">
+					<div class="text-center p-6 bg-blue-50 rounded-lg">
+						<h3 class="text-xl font-semibold text-blue-800 mb-3">Fast Performance</h3>
+						<p class="text-blue-600">Static site generation with Astro for quick loading</p>
+					</div>
+					<div class="text-center p-6 bg-green-50 rounded-lg">
+						<h3 class="text-xl font-semibold text-green-800 mb-3">Modern Design</h3>
+						<p class="text-green-600">Beautiful UI with Tailwind CSS and DaisyUI</p>
+					</div>
+					<div class="text-center p-6 bg-purple-50 rounded-lg">
+						<h3 class="text-xl font-semibold text-purple-800 mb-3">Easy Development</h3>
+						<p class="text-purple-600">Simple syntax and intuitive structure</p>
+					</div>
+				</div>
+			</section>
+
+			<section class="text-center">
+				<a href={BASE_URL} class="btn btn-primary btn-lg">Get Started</a>
+			</section>
+		</main>
+	</div>
+</BaseLayout>

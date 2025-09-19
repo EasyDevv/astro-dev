@@ -1,0 +1,67 @@
+---
+import "../global.css";
+import { BASE_URL } from "../constants.ts";
+
+const { title = "Welcome", description = "A simple landing page made with Astro" } = Astro.props;
+---
+
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<link rel="icon" type="image/svg+xml" href={`${BASE_URL}/favicon.svg`} />
+		<meta name="viewport" content="width=device-width" />
+		<meta name="generator" content={Astro.generator} />
+		<title>{title}</title>
+	</head>
+	<body class="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100 flex flex-col">
+		<nav class="bg-white shadow-md">
+			<div class="container mx-auto px-4">
+				<div class="flex justify-between items-center py-4">
+					<div class="flex items-center space-x-2">
+						<a href={`${BASE_URL}/`} class="text-2xl font-bold text-gray-800">
+							Dev
+						</a>
+					</div>
+
+					<div class="hidden md:flex items-center space-x-6">
+						<a href={`${BASE_URL}/`} class="text-gray-600 hover:text-blue-600 transition-colors duration-200">
+							Home
+						</a>
+            <a href={`${BASE_URL}/privacy/`} class="text-gray-600 hover:text-blue-600 transition-colors duration-200">
+							Privacy Policy
+						</a>
+						<a href={`${BASE_URL}/terms/`} class="text-gray-600 hover:text-blue-600 transition-colors duration-200">
+							Terms of Service
+						</a>
+						<a href={`${BASE_URL}/delete-user-data/`} class="text-gray-600 hover:text-blue-600 transition-colors duration-200">
+							Data Deletion
+						</a>
+					</div>
+			</div>
+		</nav>
+
+		<main class="flex-grow container mx-auto px-4 py-12">
+			<slot />
+		</main>
+
+		<footer class="bg-gray-800 text-white py-8 mt-auto">
+			<div class="container mx-auto px-4">
+				<div class="text-center">
+					<p class="text-gray-300">&copy; 2024 Landing Page. All rights reserved.</p>
+					<div class="mt-4 flex justify-center space-x-6">
+						<a href={`${BASE_URL}/privacy/`} class="text-gray-300 hover:text-white transition-colors duration-200">
+							Privacy Policy
+						</a>
+						<a href={`${BASE_URL}/terms/`} class="text-gray-300 hover:text-white transition-colors duration-200">
+							Terms of Service
+						</a>
+						<a href={`${BASE_URL}/delete-user-data/`} class="text-gray-300 hover:text-white transition-colors duration-200">
+							Data Deletion
+						</a>
+					</div>
+				</div>
+			</div>
+		</footer>
+
+			</body>
+</html>
